@@ -7,33 +7,50 @@
 //}
 
 
-void Banco::depositar() 
+void Banco::depositar()
 {
 	int deposito;
-	std::cout<< "Quanto deseja depositar?" << std::endl;
-	std::cin >> deposito;
+	bool depositoInvalido = true;
 
-	saldo = saldo + deposito;
-	
-	std::cout << "Seu saldo atual é de : " << saldo << std::endl;
+	while (depositoInvalido) {
+
+		std::cout << "Quanto deseja depositar?" << std::endl;
+		std::cin >> deposito;
+
+		if (deposito < 0) {
+			std::cout << "Valor inválido! insira valor correto." << std::endl;
+		}
+		else {
+			depositoInvalido = false;
+			saldo = saldo + deposito;
+		}
+
+		std::cout << "Seu saldo atual é de : " << saldo << std::endl;
+	}
 }
 
-void Banco::sacar() 
+void Banco::sacar()
 {
-	
-	std::cout << "Quanto deseja sacar? " << std::endl;
-	std::cin >> saque;
 
-	if(saque > saldo){
-		std::cout << "Saldo insuficiente" << std::endl;
-		sacar();
-	}else if (saque <= 0) {
-		std::cout <<"Valor de saque inválido" << std::endl;
-		sacar();
+	bool saqueInvalido = true;
+	while (saqueInvalido) {
+
+		std::cout << "Quanto deseja sacar? " << std::endl;
+		std::cin >> saque;
+
+		if (saque > saldo) {
+			std::cout << "Saldo insuficiente! Tente Novamente." << std::endl;
+
+		}
+		else if (saque <= 0) {
+			std::cout << "Valor de saque inválido" << std::endl;
+		}
+		else {
+			saldo = saldo - saque;
+		}
+		
+		std::cout << "Seu saldo atual é de : " << saldo << std::endl;
 	}
-	saldo = saldo - saque;
-
-	std::cout << "Seu saldo atual é de : " << saldo << std::endl;
 }
 
 void Banco::mostraInfo()

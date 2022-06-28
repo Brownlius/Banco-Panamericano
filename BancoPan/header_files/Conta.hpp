@@ -9,6 +9,8 @@ public:
 
 	//Conta(std::string nomeCompleto, std::string nomeMae, std::string endereço, int tipoConta, float aporte);
 	void criaConta();
+	void mensagemCriacaoConta();
+	float getsaldo();
 
 };
 

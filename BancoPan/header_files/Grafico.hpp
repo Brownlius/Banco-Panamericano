@@ -4,3 +4,5 @@
 void mostraCabecalho();
 
 void mostraDespedida();
+
+void mostrarMenu();
