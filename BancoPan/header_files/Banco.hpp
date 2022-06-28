@@ -1,16 +1,19 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 class Banco
 {
 	
 public:
-	void criaConta();
+	//Banco(std::string nomeCompleto, std::string nomeMae, std::string endereco, char tipoConta, float aporte);
 	void depositar();
 	void sacar();
 	void mostraInfo();
-private:
-	char nomeCompleto[50], nomeMae[50], endereço[100], tipoConta[10];
-	float aporte, saldo, saque;
+
+protected:
+	std::string nomeCompleto, nomeMae, endereco;
+	char tipoConta;
+	float aporte = 0, saldo = 0, saque = 0;
 };
 

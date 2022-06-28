@@ -129,10 +129,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="header_files\Banco.hpp" />
+    <ClInclude Include="header_files\Conta.hpp" />
+    <ClInclude Include="header_files\Grafico.hpp" />
+    <ClInclude Include="header_files\Imports.hpp" />
+    <ClInclude Include="header_files\Menu.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="origin_files\Banco.cpp" />
-    <ClCompile Include="origin_files\main.cpp" />
+    <ClCompile Include="origin_files\Conta.cpp" />
+    <ClCompile Include="origin_files\Grafico.cpp" />
+    <ClCompile Include="origin_files\Menu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
