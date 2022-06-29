@@ -8,9 +8,14 @@ class Conta: public Banco
 public:	
 
 	//Conta(std::string nomeCompleto, std::string nomeMae, std::string endereço, int tipoConta, float aporte);
-	void criaConta();
+	bool criaConta();
 	void mensagemCriacaoConta();
 	float getsaldo();
 
+protected:
+	char opcaoContinua = ' ';
+	bool repeteAporte = true;
+	bool repeteOpcao = true;
+	bool tipoContaInvalida = true;
 };
 

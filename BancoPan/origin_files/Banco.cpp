@@ -10,7 +10,6 @@
 void Banco::depositar()
 {
 	int deposito;
-	bool depositoInvalido = true;
 
 	while (depositoInvalido) {
 
@@ -32,7 +31,7 @@ void Banco::depositar()
 void Banco::sacar()
 {
 
-	bool saqueInvalido = true;
+	bool saqueInvalido = true;	
 	while (saqueInvalido) {
 
 		std::cout << "Quanto deseja sacar? " << std::endl;
@@ -46,6 +45,7 @@ void Banco::sacar()
 			std::cout << "Valor de saque inválido" << std::endl;
 		}
 		else {
+			saqueInvalido = false;
 			saldo = saldo - saque;
 		}
 		

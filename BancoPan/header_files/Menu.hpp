@@ -5,5 +5,5 @@
 
 
 
-void escolhasMenu();
+void escolhasMenu( );
 void mostrarMenu();
