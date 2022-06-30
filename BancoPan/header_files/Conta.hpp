@@ -1,21 +1,26 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "../header_files/Banco.hpp"
 
-class Conta: public Banco
+class Conta 
 {
 public:	
 
-	//Conta(std::string nomeCompleto, std::string nomeMae, std::string endereço, int tipoConta, float aporte);
-	bool criaConta();
+	Conta(std::string nomeCompleto, std::string nomeMae, std::string endereco, char tipoConta, float aporte);
+
 	void mensagemCriacaoConta();
 	float getsaldo();
 
-protected:
+private:
 	char opcaoContinua = ' ';
 	bool repeteAporte = true;
 	bool repeteOpcao = true;
 	bool tipoContaInvalida = true;
+
+protected:
+
+	std::string nomeCompleto, nomeMae, endereco;
+	char tipoConta;
+	float aporte, saldo = 0;
 };
 

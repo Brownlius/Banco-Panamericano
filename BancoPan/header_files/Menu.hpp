@@ -3,7 +3,4 @@
 #include"Conta.hpp"
 #include "grafico.hpp"
 
-
-
-void escolhasMenu( );
-void mostrarMenu();
+void escolhasMenu();

@@ -1,14 +1,10 @@
 #include "../header_files/Menu.hpp"
 
 char opcao = ' ';
-Conta obj;
 
 void escolhasMenu()
 {
-
-
 	int escolhaNoMenu;
-	
 
 	do
 	{
@@ -20,50 +16,31 @@ void escolhasMenu()
 		{
 		case 1:
 			std::cout << "\n 1) Criar conta <- " << std::endl;
-			obj.criaConta();
+			Conta conta();
+			break;
+		case 2:
+
+			std::cout << "\n 2) Depositar dinheiro <- " << std::endl;
 			break;
 
-		case 2:
-		
-			std::cout << "\n 2) Depositar dinheiro <- " << std::endl;
-
-			if (obj.criaConta()) {
-				obj.depositar();
-				break;
-			}
-			else{
+			/*else{
 				std::cout << "Nenhuma conta encontrada! Favor criar conta primeiro." << std::endl;
 					break;
-				}
+				}*/
 		case 3:
 			std::cout << "\n 3) Sacar dinheiro <- " << std::endl;
-			
-			if (obj.criaConta()) {
-				obj.sacar();
-				break;
-			}
-			else {
-				std::cout << "Nenhuma conta encontrada! Favor criar conta primeiro." << std::endl;
-				break;
-			}
+			break;
 
 		case 4:
 			std::cout << "\n 4) Acessar conta <- " << std::endl;
-			if (obj.criaConta()) {
-				obj.mostraInfo();
-				break;
-			}
-			else {
-				std::cout << "Nenhuma conta encontrada! Favor criar conta primeiro." << std::endl;
-				break;
-			}
-		
+			break;
+
 		case 5:
 			if (escolhaNoMenu == 5) {
 				mostraDespedida();
 				exit(1);
 			}
-		
+
 		default:
 		{
 			std::cout << "Escolha uma opção válida! " << std::endl;
@@ -82,6 +59,4 @@ void escolhasMenu()
 
 		}
 	} while ((opcao == 's') || (opcao == 'S'));
-
 }
-

@@ -1,15 +1,9 @@
 #include "../header_files/Banco.hpp"
 
-//Banco::Banco(std::string nomeCompleto, std::string nomeMae, std::string endereco, char tipoConta, float aporte) :
-//	nomeCompleto(nomeCompleto), nomeMae(nomeMae), endereco(endereco), tipoConta(tipoConta), aporte(aporte)
-//{
-//
-//}
-
-
 void Banco::depositar()
 {
-	int deposito;
+
+	int deposito = 0;
 
 	while (depositoInvalido) {
 
@@ -31,7 +25,6 @@ void Banco::depositar()
 void Banco::sacar()
 {
 
-	bool saqueInvalido = true;	
 	while (saqueInvalido) {
 
 		std::cout << "Quanto deseja sacar? " << std::endl;

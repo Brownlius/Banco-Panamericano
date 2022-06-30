@@ -1,13 +1,9 @@
 #include "../header_files/Conta.hpp"
 
+int qtdContasCriadas = 0;
 
-//Conta::Conta(std::string nomeCompleto, std::string nomeMae, std::string endereco, int tipoConta, float aporte) :
-//	Banco(nomeCompleto, nomeMae, endereco, tipoConta, aporte)
-//{
-bool Conta::criaConta()
+Conta::Conta(std::string nomeCompleto, std::string nomeMae, std::string endereco, char tipoConta, float aporte) 
 {
-	return false;
-
 	std::cout << "\n Insira seu nome: " << std::endl;
 	std::cin.ignore();
 	std::cin >> nomeCompleto;
@@ -29,12 +25,12 @@ bool Conta::criaConta()
 		if (tipoConta == 'p' || tipoConta == 'P' || tipoConta == 'c' || tipoConta == 'C') {
 			tipoContaInvalida = false;
 		}
-		else{
+		else {
 			std::cout << "\nOpção inválida! Tente novamente\n";
-			}
 		}
+	}
 
-	while(repeteAporte){
+	while (repeteAporte) {
 
 		std::cout << "Aporte inicial: " << std::endl;
 		std::cin >> aporte;
@@ -43,7 +39,7 @@ bool Conta::criaConta()
 			saldo = saldo + aporte;
 			mensagemCriacaoConta();
 			std::cout << "\tO saldo da conta é: " << getsaldo() << std::endl;
-			return true;
+
 		}
 		else {
 			while (repeteOpcao) {
@@ -52,22 +48,28 @@ bool Conta::criaConta()
 				std::cout << "Deseja tentar novamente? Sim(S) ou Não(N)" << std::endl;
 				std::cin >> opcaoContinua;
 
-				}if (opcaoContinua == 'S' || opcaoContinua == 's') {
-					repeteAporte = true;
-				}
-				else if (opcaoContinua == 'N' || opcaoContinua == 'n') {
-					repeteAporte = false;
-					
-				}
-				else {
-					std::cout << "\nOpção inválida! Tente novamente\n" << std::endl;
-					repeteOpcao = true;
-				}
+			}if (opcaoContinua == 'S' || opcaoContinua == 's') {
+				repeteAporte = true;
+			}
+			else if (opcaoContinua == 'N' || opcaoContinua == 'n') {
+				repeteAporte = false;
+
+			}
+			else {
+				std::cout << "\nOpção inválida! Tente novamente\n" << std::endl;
+				repeteOpcao = true;
+			}
 		}
 	}
+	qtdContasCriadas++;
 }
-	
-	
+
+//void Conta::criaConta() {
+//
+//	
+//	Conta conta1(nomeCompleto, nomeMae, endereco, tipoConta, aporte);
+//}
+
 
 void Conta::mensagemCriacaoConta() {
 

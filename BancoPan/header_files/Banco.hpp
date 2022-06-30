@@ -1,22 +1,20 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Conta.hpp"
 
-class Banco
+class Banco : public Conta
 {
-	
+
 public:
 
 	void depositar();
 	void sacar();
 	void mostraInfo();
 
-protected:
-
-	std::string nomeCompleto, nomeMae, endereco;
-	char tipoConta;
-	float aporte = 0, saldo = 0, saque = 0;
-
+private:
 	bool depositoInvalido = true;
+	bool saqueInvalido = true;
+	float saque = 0;
 };
 
