@@ -2,7 +2,7 @@
 
 char opcao = ' ';
 
-void escolhasMenu()
+void Menu::escolhasMenu()
 {
 	int escolhaNoMenu;
 
@@ -16,7 +16,7 @@ void escolhasMenu()
 		{
 		case 1:
 			std::cout << "\n 1) Criar conta <- " << std::endl;
-			Conta conta();
+			criaConta();
 			break;
 		case 2:
 

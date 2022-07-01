@@ -3,4 +3,9 @@
 #include"Conta.hpp"
 #include "grafico.hpp"
 
-void escolhasMenu();
+class Menu : public Conta
+{
+public:
+	void escolhasMenu();
+
+};

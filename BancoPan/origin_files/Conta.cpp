@@ -2,25 +2,31 @@
 
 int qtdContasCriadas = 0;
 
-Conta::Conta(std::string nomeCompleto, std::string nomeMae, std::string endereco, char tipoConta, float aporte) 
+
+void Conta::criaConta() 
 {
+	Conta conta;
 	std::cout << "\n Insira seu nome: " << std::endl;
 	std::cin.ignore();
 	std::cin >> nomeCompleto;
+	setNome(nomeCompleto);
 
 	std::cout << " Insira o nome da sua mãe: " << std::endl;
 	std::cin.ignore();
 	std::cin >> nomeMae;
+	setNomeMae(nomeMae);
 
 	std::cout << " Digite seu endereço: " << std::endl;
 	std::cin.ignore();
 	std::cin >> endereco;
+	setEndereco(endereco);
 
 	while (tipoContaInvalida) {
 
 		std::cout << " Qual tipo de conta deseja abrir:\n Poupança(P) ou Corrente(C)? " << std::endl;
 		std::cin.ignore();
 		std::cin >> tipoConta;
+		setTipoConta(tipoConta);
 
 		if (tipoConta == 'p' || tipoConta == 'P' || tipoConta == 'c' || tipoConta == 'C') {
 			tipoContaInvalida = false;
@@ -30,45 +36,15 @@ Conta::Conta(std::string nomeCompleto, std::string nomeMae, std::string endereco
 		}
 	}
 
-	while (repeteAporte) {
+	std::cout << "Aporte inicial: " << std::endl;
+	std::cin >> aporte;
 
-		std::cout << "Aporte inicial: " << std::endl;
-		std::cin >> aporte;
+	conta.depositar(aporte);
+	mensagemCriacaoConta();
 
-		if (aporte > 0) {
-			saldo = saldo + aporte;
-			mensagemCriacaoConta();
-			std::cout << "\tO saldo da conta é: " << getsaldo() << std::endl;
-
-		}
-		else {
-			while (repeteOpcao) {
-
-				std::cout << "Valor inválido! Favor depositar valor válido." << std::endl;
-				std::cout << "Deseja tentar novamente? Sim(S) ou Não(N)" << std::endl;
-				std::cin >> opcaoContinua;
-
-			}if (opcaoContinua == 'S' || opcaoContinua == 's') {
-				repeteAporte = true;
-			}
-			else if (opcaoContinua == 'N' || opcaoContinua == 'n') {
-				repeteAporte = false;
-
-			}
-			else {
-				std::cout << "\nOpção inválida! Tente novamente\n" << std::endl;
-				repeteOpcao = true;
-			}
-		}
-	}
+		
 	qtdContasCriadas++;
 }
-
-//void Conta::criaConta() {
-//
-//	
-//	Conta conta1(nomeCompleto, nomeMae, endereco, tipoConta, aporte);
-//}
 
 
 void Conta::mensagemCriacaoConta() {
