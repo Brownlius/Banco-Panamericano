@@ -10,8 +10,8 @@ private: //Variáveis
 	std::string nomeCompleto, nomeMae;
 public: //Construtor
 
-	Titular(Cpf numero, std::string nomeCompleto, std::string nomeMae);
-
+	Titular(Cpf numero, std::string nomeCompleto, std::string endereco, std::string nomeMae);
+	
 public: //setters
 	
 	

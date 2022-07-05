@@ -22,10 +22,13 @@
     <ClCompile Include="Arquivos_de_Origem\Cpf.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="CPoupanca.cpp">
+    <ClCompile Include="Arquivos_de_Origem\CCorrente.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Arquivos_de_Origem\CCorrente.cpp">
+    <ClCompile Include="Arquivos_de_Origem\CPoupanca.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Arquivos_de_Origem\Menu.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,10 +42,13 @@
     <ClInclude Include="Arquivos_de_cabecalho\Conta.hpp">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="CPoupanca.hpp">
+    <ClInclude Include="Arquivos_de_cabecalho\CCorrente.hpp">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Arquivos_de_cabecalho\CCorrente.hpp">
+    <ClInclude Include="Arquivos_de_cabecalho\CPoupanca.hpp">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Arquivos_de_cabecalho\Menu.hpp">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

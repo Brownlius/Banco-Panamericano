@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,16 +130,18 @@
   <ItemGroup>
     <ClCompile Include="Arquivos_de_Origem\CCorrente.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Cpf.cpp" />
+    <ClCompile Include="Arquivos_de_Origem\CPoupanca.cpp" />
+    <ClCompile Include="Arquivos_de_Origem\Menu.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Titular.cpp" />
-    <ClCompile Include="CPoupanca.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arquivos_de_cabecalho\CCorrente.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Conta.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Cpf.hpp" />
+    <ClInclude Include="Arquivos_de_cabecalho\CPoupanca.hpp" />
+    <ClInclude Include="Arquivos_de_cabecalho\Menu.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Titular.hpp" />
-    <ClInclude Include="CPoupanca.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
