@@ -6,6 +6,6 @@
 class CPoupanca final : public Conta<2>
 {
 public:
-	CPoupanca(std::string numeroConta, char tipoConta, Titular titular);
+	CPoupanca(std::string numeroConta, char tipoConta, float saldo, Titular titular);
 };
 

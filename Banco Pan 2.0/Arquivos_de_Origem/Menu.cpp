@@ -1,17 +1,35 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 #include <string>
-#include "../Arquivos_de_cabecalho/Conta.hpp"
-#include "../Arquivos_de_cabecalho/CCorrente.hpp"
-#include "../Arquivos_de_cabecalho/CPoupanca.hpp"
+#include "../Arquivos_de_cabecalho/Menu.hpp"
 
-void mostraMenu() {
+void menuInicial() {
+	int escolhaNoMenu;
+	bool opcaoValida = true;
 
-	std::cout << "\n 1) Criar conta -> " << std::endl;
-	std::cout << "\n 2) Depositar dinheiro -> " << std::endl;
-	std::cout << "\n 3) Sacar dinheiro -> " << std::endl;
-	std::cout << "\n 4) Acessar conta -> " << std::endl;
-	std::cout << "\n 5) Sair ->" << std::endl;
+	while (opcaoValida) {
+
+		mostraMenuInicial();
+		std::cout << "\n";
+		std::cin >> escolhaNoMenu;
+
+		switch (escolhaNoMenu)
+		{
+		case 1:
+			std::cout << "\n 1) Criar conta <- " << std::endl;
+			criaConta();
+			opcaoValida = false;
+			break;
+
+		case 2:
+			exit(1);
+			break;
+		default:
+		{
+			std::cout << "Escolha uma opcao válida! " << std::endl;
+			break;
+		}
+		}
+	}
 }
 
 void criaConta()
@@ -37,26 +55,28 @@ void criaConta()
 	std::cin.ignore();
 	std::cin >> endereco;
 
-	while (tipoContaInvalida) {
+	Titular titular(Cpf(cpf), nomeCompleto, endereco, nomeMae);
 
+	while (tipoContaInvalida) {
 		std::cout << " Qual tipo de conta deseja abrir:\n Poupança(P) ou Corrente(C)? " << std::endl;
 		std::cin.ignore();
 		std::cin >> tipoConta;
 
-		Titular titular(Cpf(cpf), nomeCompleto, endereco, nomeMae);
-
-
-		if (tipoConta == 'p' || tipoConta == 'P') {
-			tipoContaInvalida = false;
-			CPoupanca cointa("13.69833-0", 'P', titular);
-
+		switch (tipoConta)
+		{
+		case 1:
+				tipoContaInvalida = false;
+				CPoupanca cointa("13.69833-0", 'P', saldo, titular);
+				break;
+			
+		case 2:
+				tipoContaInvalida = false;
+				CCorrente cointa("10.69833-0", 'C', saldo, titular);
+				break;
+		default:
+		{
+				std::cout << "\nOpção inválida! Tente novamente\n";
 		}
-		else if (tipoConta == 'c' || tipoConta == 'C') {
-			tipoContaInvalida = false;
-			CCorrente cointa("10.69833-0", 'C', titular);
-		}
-		else {
-			std::cout << "\nOpção inválida! Tente novamente\n";
 		}
 	}
 
@@ -64,13 +84,12 @@ void criaConta()
 	std::cin >> aporte;
 	saldo += aporte;
 
-
-}
-
-void escolhasMenu()
-{
+	std::cout << "O saldo da conta é: " << saldo << std::endl;
+	std::cout << "Conta criada com sucesso. Acesse as funcionalidade do nosso banco" << std::endl;
+	
 	int escolhaNoMenu;
 	char opcao = ' ';
+
 	do
 	{
 		mostraMenu();
@@ -80,23 +99,23 @@ void escolhasMenu()
 		switch (escolhaNoMenu)
 		{
 		case 1:
-			std::cout << "\n 1) Criar conta <- " << std::endl;
-			criaConta();
+			std::cout << "\n 1) Depositar dinheiro <- " << std::endl;
+			std::cout << "Quanto deseja depositar? " << std::endl;
+			float valorADepositar;
+			std::cin >> valorADepositar;
+			cointa.depositar(1550);
 			break;
-		case 2:
 
-			std::cout << "\n 2) Depositar dinheiro <- " << std::endl;
+		case 2:
+			std::cout << "\n 2) Sacar dinheiro <- " << std::endl;
+
 			break;
 
 		case 3:
-			std::cout << "\n 3) Sacar dinheiro <- " << std::endl;
+			std::cout << "\n 3) Acessar conta <- " << std::endl;
 			break;
 
 		case 4:
-			std::cout << "\n 4) Acessar conta <- " << std::endl;
-			break;
-
-		case 5:
 			exit(1);
 
 		default:
@@ -104,9 +123,9 @@ void escolhasMenu()
 			std::cout << "Escolha uma opcao válida! " << std::endl;
 			break;
 		}
-	}
+		}
 
-		std::cout << "Deseja continuar navegando? Sim(S) ou N�o(N): " << std::endl;
+		std::cout << "Deseja continuar navegando? Sim(S) ou Não(N): " << std::endl;
 		std::cin.ignore();
 		std::cin >> opcao;
 
@@ -117,3 +136,12 @@ void escolhasMenu()
 	} while ((opcao == 's') || (opcao == 'S'));
 }
 
+
+	
+
+
+
+
+
+
+	

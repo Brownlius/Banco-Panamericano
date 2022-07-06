@@ -133,6 +133,7 @@
     <ClCompile Include="Arquivos_de_Origem\CPoupanca.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Menu.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Titular.cpp" />
+    <ClCompile Include="InterfaceGrafica.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="Arquivos_de_cabecalho\CPoupanca.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Menu.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Titular.hpp" />
+    <ClInclude Include="InterfaceGrafica.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

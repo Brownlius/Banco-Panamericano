@@ -10,12 +10,8 @@ template<int taxaSaque>
 class Conta
 {
 public:
-	enum resultadoSaque {
-		sucesso, valorNegativo, saldoInsuficiente
-	};
-
-
-	Conta(std::string numeroConta, char tipoConta, Titular titular) : numeroConta(numeroConta), tipoConta(tipoConta), titular(titular), saldo(0)
+	
+	Conta(std::string numeroConta, char tipoConta, float saldo, Titular titular) : numeroConta(numeroConta), tipoConta(tipoConta), titular(titular), saldo(saldo)
 	{
 		std::cout << "Conta Criada!" << std::endl;
 	}
@@ -24,29 +20,17 @@ public:
 		return saldo;
 	}
 
-	std::variant<resultadoSaque, float>sacar(float valorASacar) {
-		std::cout << "Chamando método sacar da conta corrente" << std::endl;
-
-		if (valorASacar < 0) {
-			std::cout << "Não pode sacar valor negativo" << std::endl;
-			return valorNegativo;
+	void sacar(float valorASacar) {
+		if (valorASacar > saldo) {
+			std::cout << "Saldo insuficiente." << std::endl;
+			return;
 		}
-
-		float tarifa = valorASacar * (taxaSaque / 100);
-		float valorSaque = valorASacar + tarifa;
-
-		if (valorSaque > saldo) {
-			std::cout << "Saldo insuficiente" << std::endl;
-			return saldoInsuficiente;
-		}
-				
-		saldo -= valorSaque;
-		return saldo;
+		saldo += valorASacar;
 	}
 
 	void depositar(float valorADepositar) {
 		if (valorADepositar < 0) {
-			std::cout << "Não pode sacar valor negativo" << std::endl;
+			std::cout << "Não pode depositar valor negativo" << std::endl;
 			return;
 		}
 		saldo += valorADepositar;

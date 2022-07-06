@@ -7,28 +7,10 @@
 #include "Arquivos_de_cabecalho/CPoupanca.hpp"
 #include "Arquivos_de_cabecalho/Menu.hpp"
 
-using namespace std;
-
-
-
-
-
-
 int main() 
 {
-	escolhasMenu();
-	
-
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
+	mostraSaudacao();
+	menuInicial();
 	
 	return 0;
 }
