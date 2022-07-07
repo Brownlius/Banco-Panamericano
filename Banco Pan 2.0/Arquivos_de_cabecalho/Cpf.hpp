@@ -6,7 +6,10 @@ class Cpf
 public:
 	void validaCpf();
 	explicit Cpf(std::string numero);
-	std::string recuperaNumero() const;
+	std::string recuperaCpfnumero() const {
+		return numero;
+	}
+
 private:
 
 	 std::string numero;

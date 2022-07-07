@@ -1,4 +1,4 @@
-#include "InterfaceGrafica.hpp"
+#include "../Arquivos_de_cabecalho/InterfaceGrafica.hpp"
 
 
 void mostraDespedida() {

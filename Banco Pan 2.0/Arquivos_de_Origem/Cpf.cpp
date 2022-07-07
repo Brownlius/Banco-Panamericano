@@ -5,12 +5,10 @@ Cpf::Cpf(std::string numero) : numero(numero)
 	validaCpf();
 }
 
-std::string Cpf::recuperaNumero() const {
-	return numero;
-}
+
 
 void Cpf::validaCpf() {
-	if (recuperaNumero().length() < 11 || recuperaNumero().length() > 11) {
+	if (recuperaCpfnumero().length() < 11 || recuperaCpfnumero().length() > 11) {
 		std::cout << "CPF inválido" << std::endl;
 		return;
 	}

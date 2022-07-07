@@ -128,22 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Arquivos_de_Origem\CCorrente.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Cpf.cpp" />
-    <ClCompile Include="Arquivos_de_Origem\CPoupanca.cpp" />
+    <ClCompile Include="Arquivos_de_Origem\InterfaceGrafica.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Menu.cpp" />
     <ClCompile Include="Arquivos_de_Origem\Titular.cpp" />
-    <ClCompile Include="InterfaceGrafica.cpp" />
+    <ClCompile Include="Conta.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Arquivos_de_cabecalho\CCorrente.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Conta.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Cpf.hpp" />
-    <ClInclude Include="Arquivos_de_cabecalho\CPoupanca.hpp" />
+    <ClInclude Include="Arquivos_de_cabecalho\InterfaceGrafica.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Menu.hpp" />
     <ClInclude Include="Arquivos_de_cabecalho\Titular.hpp" />
-    <ClInclude Include="InterfaceGrafica.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
