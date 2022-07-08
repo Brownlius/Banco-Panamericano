@@ -35,25 +35,25 @@ void menuInicial() {
 
 void criaConta()
 {
-	std::string nomeCompleto, cpf, nomeMae, endereco;
-
+	
+	char nomeCompleto[70], cpf[15], nomeMae[70], endereco[70];
 	float aporte = 0;
 
 	std::cout << "\n Insira seu nome: " << std::endl;
 	std::cin.ignore();
-	std::cin >> nomeCompleto;
+	std::cin.get(nomeCompleto, 70);
 
 	std::cout << "\n Insira seu CPF: " << std::endl;
 	std::cin.ignore();
-	std::cin >> cpf;
+	std::cin.get(cpf, 15);
 
 	std::cout << " Insira o nome da sua mãe: " << std::endl;
 	std::cin.ignore();
-	std::cin >> nomeMae;
-
+	std::cin.get(nomeMae, 70);
+		
 	std::cout << " Digite seu endereço: " << std::endl;
 	std::cin.ignore();
-	std::cin >> endereco;
+	std::cin.get(endereco, 70);
 
 	std::cout << " Aporte inicial: " << std::endl;
 	std::cin >> aporte;
