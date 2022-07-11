@@ -26,7 +26,7 @@ void menuInicial() {
 			break;
 		default:
 		{
-			std::cout << "Escolha uma opcao válida! " << std::endl;
+			std::cout << " Escolha uma opcao válida! " << std::endl;
 			break;
 		}
 		}
@@ -47,22 +47,22 @@ void criaConta()
 	std::cin.ignore();
 	std::cin.get(cpf, 15);
 
-	std::cout << " Insira o nome da sua mãe: " << std::endl;
+	std::cout << "\n Insira o nome da sua mãe: " << std::endl;
 	std::cin.ignore();
 	std::cin.get(nomeMae, 70);
 		
-	std::cout << " Digite seu endereço: " << std::endl;
+	std::cout << "\n Digite seu endereço: " << std::endl;
 	std::cin.ignore();
 	std::cin.get(endereco, 70);
 
-	std::cout << " Aporte inicial: " << std::endl;
+	std::cout << "\n Aporte inicial: " << std::endl;
 	std::cin >> aporte;
 
 	Titular titular(Cpf(cpf), nomeCompleto, endereco, nomeMae);
 	Conta cointa("13-168490", aporte, titular);
 
-	std::cout << " O saldo da conta é: " << aporte << std::endl;
-	std::cout << " Conta criada com sucesso. \n Acesse as funcionalidade do nosso banco" << std::endl;
+	std::cout << "\n O saldo da conta é: " << aporte << std::endl;
+	std::cout << "\n Conta criada com sucesso! \n\n Acesse as funcionalidade do nosso banco: " << std::endl;
 	segundoMenu(cointa);
 }
 	void segundoMenu(Conta& conta) {
@@ -98,7 +98,6 @@ void criaConta()
 				std::cout << " Os dados de sua conta: " << std::endl;
 				conta.mostraDadosTitular();
 				conta.mostraDadosConta();
-				
 				break;
 
 			case 4:

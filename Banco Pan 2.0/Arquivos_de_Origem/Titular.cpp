@@ -4,13 +4,13 @@ Titular::Titular(Cpf numero, std::string nomeCompleto, std::string endereco, std
 	: Cpf(numero), nomeCompleto(nomeCompleto), endereco(endereco), nomeMae(nomeMae)
 {
 
-	std::cout << "Titular criado com sucesso!" << std::endl;
+	std::cout << "\nTitular criado com sucesso!" << std::endl;
 }
 
 void Titular::mostraDadosTitular() {
-	std::cout << "Titular é: " << getNomeCompleto() << std::endl;
-	std::cout << "Nome da mãe: " << getNomeMae() << std::endl;
-	std::cout << "CPF do titular: " << recuperaCpfnumero() << std::endl;
-	std::cout << "Endereço Completo: " << getEndereco() << std::endl;
+	std::cout << "\nTitular é: " << getNomeCompleto() << std::endl;
+	std::cout << "\nNome da mãe: " << getNomeMae() << std::endl;
+	std::cout << "\nCPF do titular: " << recuperaCpfnumero() << std::endl;
+	std::cout << "\nEndereço Completo: " << getEndereco() << std::endl;
 
 }

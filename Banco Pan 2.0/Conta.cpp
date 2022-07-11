@@ -21,12 +21,12 @@ void Conta::sacar(float valorASacar) {
 		return;
 	}
 	saldo -= valorASacar;
-	std::cout << " Saque realizado com sucesso!\n Saldo atual da conta é: " << saldo << std::endl;
+	std::cout << " Saque realizado com sucesso!\n\n Saldo atual da conta é: " << saldo << std::endl;
 
 }
 
 void Conta::mostraDadosConta() {
 
-	std::cout << "O saldo da Conta é: " << recuperaSaldo() << std::endl;
+	std::cout << " O saldo da Conta é: " << recuperaSaldo() << std::endl;
 }
 
